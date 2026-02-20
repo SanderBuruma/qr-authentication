@@ -54,7 +54,7 @@ def auth():
 
     while True:
         code = input("Enter 6-digit code: ").strip()
-        if totp.verify(code):
+        if totp.verify(code, valid_window=1):
             print(f"{GREEN}✓ Authenticated{RESET}")
             break
         print(f"{RED}✗ Invalid code, try again.{RESET}")
